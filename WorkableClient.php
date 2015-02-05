@@ -59,9 +59,6 @@ class WorkableClient {
         $url = sprintf("jobs/%s", $shortcode);
         $job_details_response = $this->getRequest($url);
 
-        echo "job details:\n\n";
-        print_r($job_details_response);
-
         $job = new Job(
             $job_details_response->key,
             $job_details_response->title,
@@ -174,10 +171,6 @@ class WorkableClient {
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         $curl_response = curl_exec($curl);
-
-        echo "URL: " . $full_url;
-        echo "JSON_DATA: \n\n";
-        print_r($curl_response);
 
         $response = json_decode($curl_response);
         curl_close($curl);

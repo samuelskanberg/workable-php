@@ -1,0 +1,9 @@
+vendor
+composer.lock
+composer.phar
+
+# API keys will be stored here
+config.ini
+
+
+*.swp
